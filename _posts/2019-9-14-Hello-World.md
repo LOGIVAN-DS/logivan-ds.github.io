@@ -2,8 +2,7 @@
 layout: post
 title: Lời chào từ team AI của LOGIVAN!
 ---
-
-## Chào bạn đọc,
+Chào bạn đọc, 
 
 LOGIVAN là một startup công nghệ trẻ trong lĩnh vực vận tải. LOGIVAN cung cấp dich vụ vận tải 4.0 dựa trên nền tảng kết nối trực tiếp chủ hàng và mạng lưới xe tải chiều về rỗng trên toàn quốc.
 
