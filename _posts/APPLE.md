@@ -1,0 +1,52 @@
+# APPLE: Hệ thống tự động định giá vận tải của LOGIVAN
+
+[![LOGIVAN](https://www.logivan.com/wp-content/uploads/2019/05/logo-02.png)](https://www.logivan.com/)
+
+\#AI #MODELING #PRICING #LOGISTICS 
+# Bài toán
+Trong lĩnh vực vận tải, định giá là một bài toán thú vị. Ở mức đơn giản như định giá taxi. Giá taxi được tính đơn giản như sau:
+```
+giá cước vận chuyển = giá mở cửa + giá cước 100m * quãng đường
+```
+Sự ra đời của các dịch vụ car sharing làm thay đổi việc tính giá taxi. Hiện tại, giá dịch vụ của dịch vụ car sharing được tính như sau, ko tính các hình thức khuyến mãi hoặc subcription:
+```
+giá cước vận chuyển = giá cước * quãng đường * hệ số (giờ cao điểm, nhu cầu)
+```
+Trong lĩnh vực vận tải hàng hóa, chi phí vận chuyển hàng hóa là một bài toán phức tạp. Khác với bài toán giá taxi, ngoài quãng đường vận chuyển, giá cước vận tải hàng hóa phụ thuộc vào nhiều yếu tố khác như:
+- Khối lượng và kích thước hàng hóa vận chuyển
+- Loại xe tải
+- thời điểm và địa điểm vận chuyển
+- Chi phí xăng dầu, chí phí khấu hao, chi phí cầu đường
+
+và nhiều yếu tố khâc.Vì vậy, việc tính toán giá cước vận chuyển hàng hóa đường bộ rất phức tạp. Hiện tại, giá cước vận tải ở Việt Nam được xây dựng dựa trên ba yếu tố chính là quãng đường, khối lượng, và loại hàng hóa vận chuyển. Công thức trên không phản ánh đúng giá cước vận tải, khiến cho giao dịch rất khó được chấp thuận.
+
+# APPLE: Auto Pricing Project for Logitsics: code E
+Mục tiêu của LOGIVAN là xây dựng một mô hình tự động định giá vận tải chính xác và phù hợp với thị trường. Trong thực tế, không phải mọi giá trị đều có thể ước lượng được, ví dụ như kết quả xổ số, hay thị trường hcuwngs khoán. Vì vậy, bước đầu tiên phải chứng minh được rằng tồn tại một công thức/qui luật trong giá cước vận tải.
+### Thử nghiệm
+LOGIVAN thu thập dữ liệu giá cước vận tải của hàng nghìn chuyến vận chuyển. Các thông tin về chuyến hàng được thu thập có thể chia thành các yếu tố chính như sau:
+
+| Yếu tố | Chi phí cụ thể |
+| ------ | -------------- |
+| Địa lý | Độ dài quãng đường vận chuyển,địa điểm bốc dỡ, nội thị, ... |
+| Hàng hóa | Khối lượng, kích thước, loại hàng hóa |
+| Xe tải | Loại xe tải, kích thước, ghép hàng, ... |
+| Thời gian | Thời điểm, thời gian, tốc độ vận chuyển|
+| Khách hàng | hợp đồng, bảo hiểm, hồ sơ khách hàng |
+| Khoa học dữ liệu | Các yếu tố được sinh ra tự động bởi thuật toán |
+
+Dữ liệu được biến đổi thành hơn hàng trăm thuộc tính khác nhau trước khi đưa vào mô hình. Hơn bảy thuật toán và hàng vạn bộ tham số đã được thử nghiệm để tìm ra mô hình tốt nhất để tính giác cước vận tải. Kết quả cuối cùng cho ra một mô hình với độ sai lệch chỉ 11% khi thử nghiệm. Điều này chứng tỏ giá cước vận tải có khả năng mô hình hóa.
+### Nâng cấp mô hình
+
+Từ kết quả thử nghiệm, LOGIVAN quyết tâm xây dựng một mô hình hoàn hiện hơn. Để có thể vận hành tốt trong thực tế, mô hình phải có thêm nhưng yếu tố sau:
+- Sai số phải thấp, và hạn chế sai số âm để đảm bảo lợi nhuận
+- Có khả năng học trực tuyến một cách tự động, hạn chế yêu cầu huấn luyện lại mô hình
+- Có khả năng thích ứng với thay đổi của thị trường và business của LOGIVAN
+
+Để thỏa mãn câc yêu cầu nêu trên, một mô hình neural network với hàm mất mát đã được chình sửa đã được sử dụng để học dữ liệu. Ngoài ra, các thuộc tính quan trọng được kết hợp lại với nhau tạo thành các siêu thuộc tính nhằm cải thiện mô hình. Kết quả đạt được là một mô hình có khả năng học dữ liệu nhanh, có khả năng học tiếp mà không cần huấn luyện lại, và sai số âm nhỏ hơn 1% so với giá thị trường. Mô hình này hiện tại là mô hình đang được sử dụng tại LOGIVAN để tính giá vận tải.
+
+### Tương lai: Người thương thuyết AI
+
+Trong tương lai, không chỉ đơn hàng được học bởi mô hình, mà cả profile của chủ hàng và tài xế cũng mô hình học qua. Mục tiêu của nghiên cứu này nhằm tạo ra một mô hình có khả năng đưa ra giá cước vận tải dựa trên thông tin của đơn hàng và khách hàng, qua đó nâng cao tỉ lệ giao dịch được chấp thuận. Nghiên cứu này dự kiến sẽ hoàn thành trước năm 2020.
+
+# Kết luận
+Bài toán định giá vận tải là một toán khó và thú vị. LOGIVAN là một trong những doanh nghiệp đầu tiên áp dụng trí tuệ nhân tạo vào việc này. Ngoài việc đưa ra giá sát với thị trường, mô hình của AI còn có các ưu điểm vượt trội như linh hoạt với thị trường, tối ưu lợi nhuận và có tỉ lệ chấp thuận giao dịch cao.

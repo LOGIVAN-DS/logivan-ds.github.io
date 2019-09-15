@@ -4,12 +4,14 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Vu vơ nhây thơ, blogger của phòng khoa dữ liệu (Data Science) của LOGIVAN
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+Blog chia sẻ các vấn đề về DS mà công ty công nghệ LOGIVAN đang theo đuổi.
+
+## No truck will ever return empty
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[aiteam@logivan.com](mailto:aiteam@logivan.com)
